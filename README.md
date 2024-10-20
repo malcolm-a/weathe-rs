@@ -2,13 +2,13 @@
 <details>
   <summary>🌦️ <strong>weathe-rs</strong></summary>
   <ul>
-    <li>📖 <strong><a href="#about">About</a></strong>
+    <li>📖 <strong><a href="#-about">About</a></strong>
       <ul>
         <li><strong><a href="#purpose">Purpose</a></strong></li>
         <li><strong><a href="#demo">Demo</a></strong></li>
       </ul>
     </li>
-    <li>🛠️ <strong><a href="#installation">Installation</a></strong></li>
+    <li>🛠️ <strong><a href="#-installation">Installation</a></strong></li>
   </ul>
 </details>
 <!-- TOC -->
@@ -37,7 +37,7 @@ The `<Quit>` button quits the app.
 
 ## 🛠 Installation
 
-Clone this project with 
+Clone this project with
 
 `git clone https://github.com/malcolm-a/weathe-rs.git`
 
@@ -46,6 +46,3 @@ Put this key in `src/api_key.rs` :
 
 ```rust
 pub const API_KEY: &str = "YOUR_API_KEY";
-```
-
-Finally, run `cargo run` at the root of the project directory to run the project.
