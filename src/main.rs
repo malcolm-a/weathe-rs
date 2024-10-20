@@ -1,5 +1,5 @@
+mod api_key;
 use std::sync::{Arc, Mutex};
-
 use cursive::{Cursive, CursiveExt, theme::{BaseColor, Color, PaletteColor}};
 use cursive::traits::*;
 use cursive::views::{Dialog, EditView, LinearLayout, TextView};
@@ -8,8 +8,6 @@ use serde::Deserialize;
 use tokio::runtime::Runtime;
 
 use api_key::API_KEY;
-
-mod api_key;
 
 const BASE_URL: &str = "https://api.weatherapi.com/v1/current.json";
 
@@ -141,7 +139,6 @@ fn main() {
                     }
                 })
         );
-
 
         siv_lock.focus_name("search").unwrap();
 
