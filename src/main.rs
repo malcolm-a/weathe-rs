@@ -1,6 +1,7 @@
 mod api_key;
 use std::sync::{Arc, Mutex};
 use cursive::{Cursive, CursiveExt, theme::{BaseColor, Color, PaletteColor}};
+use cursive::event::Event;
 use cursive::traits::*;
 use cursive::views::{Dialog, EditView, LinearLayout, TextView};
 use reqwest::Client;
@@ -115,7 +116,6 @@ fn main() {
         theme.palette[PaletteColor::Primary] = Color::Light(BaseColor::White); // Text in white
         siv_lock.set_theme(theme);
 
-
         // Create the layout with the search bar at the top
         let layout = LinearLayout::vertical()
             .child(
@@ -140,10 +140,18 @@ fn main() {
                 })
         );
 
-        siv_lock.focus_name("search").unwrap();
-
         update_weather(&mut siv_lock, "auto:ip", Arc::clone(&rt));
+
+        siv_lock.add_global_callback(Event::CtrlChar('r'), {
+            let rt_clone = Arc::clone(&rt);
+            move |s| {
+                update_weather(s, "auto:ip", rt_clone.clone());
+            }
+        });
+
+        siv_lock.add_global_callback(Event::CtrlChar('q'), |s| s.quit());
     }
+
 
     let mut siv_lock = siv.lock().unwrap();
     siv_lock.run();
