@@ -72,12 +72,11 @@ fn update_weather(s: &mut Cursive, query: &str, rt: Arc<Runtime>) {
     let result = rt.block_on(fetch_weather(query));
     match result {
         Ok(weather) => {
-            let emoji = get_weather_emoji(weather.current.condition.code);
+            // let emoji = get_weather_emoji(weather.current.condition.code);
             s.call_on_name("weather_text", |view: &mut TextView| {
                 view.set_content(format!(
-                    "{} {}, {}\n{}\n{}°C (Feels like: {}°C)\n\
+                    "{}, {}\n{}\n{}°C (Feels like: {}°C)\n\
                     Wind: {} kph, {}\nPressure: {} mb\nPrecipitation: {} mm\nHumidity: {}%\nCloud Cover: {}%",
-                    emoji,
                     weather.location.name,
                     weather.location.country,
                     weather.current.condition.text,
