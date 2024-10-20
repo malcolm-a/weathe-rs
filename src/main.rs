@@ -11,7 +11,7 @@ use api_key::API_KEY;
 
 mod api_key;
 
-const BASE_URL: &str = "http://api.weatherapi.com/v1/current.json";
+const BASE_URL: &str = "https://api.weatherapi.com/v1/current.json";
 
 #[derive(Deserialize)]
 struct WeatherResponse {
