@@ -1,13 +1,15 @@
-mod api_key;
+use std::sync::{Arc, Mutex};
 
-use cursive::{theme::{BaseColor, Color, Palette, PaletteColor, Theme}, Cursive, CursiveExt};
-use cursive::views::{Dialog, EditView, TextView, LinearLayout};
+use cursive::{Cursive, CursiveExt, theme::{BaseColor, Color, PaletteColor}};
 use cursive::traits::*;
+use cursive::views::{Dialog, EditView, LinearLayout, TextView};
 use reqwest::Client;
 use serde::Deserialize;
-use std::sync::{Arc, Mutex};
 use tokio::runtime::Runtime;
+
 use api_key::API_KEY;
+
+mod api_key;
 
 const BASE_URL: &str = "http://api.weatherapi.com/v1/current.json";
 
