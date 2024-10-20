@@ -1,6 +1,21 @@
+<!-- TOC -->
+<details>
+  <summary>🌦️ <strong>weathe-rs</strong></summary>
+  <ul>
+    <li>📖 <strong><a href="#about">About</a></strong>
+      <ul>
+        <li><strong><a href="#purpose">Purpose</a></strong></li>
+        <li><strong><a href="#demo">Demo</a></strong></li>
+      </ul>
+    </li>
+    <li>🛠️ <strong><a href="#installation">Installation</a></strong></li>
+  </ul>
+</details>
+<!-- TOC -->
+
 # weathe-rs
 
-## About
+## 📖 About
 
 ### Purpose
 
@@ -20,7 +35,7 @@ The `<Reset>` button resets to your default location.
 
 The `<Quit>` button quits the app.
 
-## Installation
+## 🛠 Installation
 
 Clone this project with 
 
