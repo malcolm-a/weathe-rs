@@ -132,11 +132,16 @@ fn main() {
             .child(TextView::new("Fetching weather...").with_name("weather_text"));
 
         siv_lock.add_layer(
-            Dialog::new()
-                .title("Weather App")
-                .content(layout)
-                .button("Quit", |s| s.quit()),
+            Dialog::around(layout)
+                .button("Quit", |s| s.quit())
+                .button("Reset", {
+                    let rt_clone = Arc::clone(&rt); // Create a new clone of `rt`
+                    move |s| {
+                        update_weather(s, "auto:ip", rt_clone.clone()); // Clone rt_clone for the function call
+                    }
+                })
         );
+
 
         siv_lock.focus_name("search").unwrap();
 
