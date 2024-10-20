@@ -1,0 +1,11 @@
+[package]
+name = "weathe-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "*", features = ["json"] }
+tokio = { version = "*", features = ["full"] }
+cursive = "*"
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
